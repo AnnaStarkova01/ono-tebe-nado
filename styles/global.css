@@ -27,8 +27,23 @@ blockquote {
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 img {
   width: 100%;
+}
+
+address{
+  font-style: normal;
+  
+}
+nav{
+  margin:0px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
