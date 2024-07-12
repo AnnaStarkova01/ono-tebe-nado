@@ -1,48 +1,37 @@
+* {
+  font-family: Raleway, sans-serif;
+}
+
 /* место для вашего кода */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  height: 3028px;
-}
-
-h1 {
-  position: absolute;
-  width: 1000px;
-  height: 355px;
-  font-size: 100px;
-  font-family: Raleway, sans-serif;
-  color: white;
-  z-index: 2;
-  margin: 165px 50px 237px 50px;
-  letter-spacing: 30px;
-  text-transform: uppercase;
-  line-height: 1.21;
+  padding-top: 92px;
+  padding-bottom: 88px;
 }
 
 /*Шапка сайта*/
 .header {
-  top: 92px;
-  left: 24px;
   width: 1052px;
-  height: 105px;
   display: grid;
-  justify-content: space-between;
   grid-template-columns: 454px 148px 450px;
-  grid-template-rows: repeat(1, 105px);
+  grid-template-rows: 105px;
   margin: auto;
 }
 
 /*Меню сайта*/
-.header__menu {
+.menu {
   height: 22px;
-  font-family: Raleway, sans-serif;
-  font-size: 18px;
-  display: inline;
+}
+
+.header__menu {
+  display: flex;
   align-items: center;
   justify-content: center;
   margin: 44px 6px 39px 26px;
+  font-size: 18px;
 }
 
 /*Неупорядоченный список меню*/
@@ -56,10 +45,13 @@ h1 {
   padding-right: 33px;
 }
 
-/*Подчеркивание определенных пунктов меню*/
-.underlining_line {
+.menu-link {
   text-decoration: underline;
   text-underline-offset: 5px;
+}
+
+.without-underline {
+  text-decoration: none;
 }
 
 /*Удаление маркера у определенного элемента меню*/
@@ -71,23 +63,24 @@ h1 {
 .logo-black {
   background-image: url(../images/logo-black.svg);
   width: 129.11px;
-  height: 104.65px;
-  left: 0;
+  margin-left: 9px;
+}
+/*Общие параметры background*/
+.general-img-parameters {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-left: 9px;
-  margin-top: 1.63px;
 }
-
-/*Контактная информация*/
+/* Контактная информация*/
 .address {
-  font-family: Raleway, sans-serif;
   font-size: 18px;
   text-align: left;
+  line-height: 24.3px;
+}
+
+.address_header {
   margin-left: 184px;
   margin-top: 5px;
-  line-height: 24.3px;
 }
 
 /*Контактная информация. Нижнее подчеркивание у номера телефона и почты*/
@@ -98,14 +91,17 @@ h1 {
 
 /*Картинка с красками*/
 .cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   position: relative;
   background-image: url(../images/cover.jpg);
   z-index: 0;
-  width: 1100px;
-  height: 757px;
+  min-width: 1100px;
+  min-height: 757px;
   margin-top: 96px;
-  background-size: cover;
-  background-position: center;
+  background-repeat: repeat;
 }
 
 /*Наложение темного полупрозрачного блока поверх изображений*/
@@ -115,37 +111,52 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 
-/*Отступы определенных букв заголовка*/
-.samp-cover-h1 {
+/*Заголовок Оно тебе надо*/
+.cover__title {
+  width: 1000px;
   font-size: 100px;
-  font-family: Raleway, sans-serif;
-  margin-left: 30px;
+  color: white;
+  z-index: 2;
+  margin: 165px 57px 135px 50px;
+  text-transform: uppercase;
+  letter-spacing: 30px;
 }
 
-/*Отступ от левого края слова "тебе"*/
-.indentation_tebe {
-  margin-left: 286px;
-  font-size: 100px;
-  font-family: Raleway, sans-serif;
+.aligned-text {
+  position: relative;
+  top: -2px;
+  left: 2px;
 }
-/*Отступ от левого края слова "надо"*/
-.indentation_nado {
-  margin-left: 585px;
-  font-size: 100px;
-  font-family: Raleway, sans-serif;
+
+.aligned-text_center {
+  position: relative;
+  display: block;
+  text-align: center;
+  top: 7px;
+  left: 3px;
+}
+
+.aligned-text_right {
+  position: relative;
+  display: block;
+  text-align: right;
+  left: 33px;
+  top: 9px;
+}
+
+.letter-spacing-extended {
+  letter-spacing: 60px;
 }
 
 /*Контейнер для подзаголовка и кнопки*/
 .cover__description {
-  height: 51px;
+  margin-bottom: 51px;
   width: 100%;
-  margin-top: 655px;
   z-index: 3;
-  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -155,7 +166,6 @@ h1 {
 .cover__description-text {
   color: white;
   text-transform: uppercase;
-  font-family: Raleway, sans-serif;
   z-index: 3;
   font-size: 22px;
   font-weight: 100;
@@ -169,9 +179,8 @@ h1 {
   text-transform: uppercase;
   font-size: 22px;
   font-weight: 100;
-  font-family: Raleway, sans-serif;
-  width: 256px;
-  height: 51px;
+  min-width: 256px;
+  min-height: 51px;
   border: 1px solid white;
   color: white;
   padding: 12px 32px 11px 31px;
@@ -180,8 +189,8 @@ h1 {
 
 /*Контейнер "лоты"*/
 .lots {
-  position: absolute;
-  height: 692px;
+  display: flex;
+  flex-direction: column;
   width: 1052px;
   margin-top: 179px;
   margin-left: 24px;
@@ -189,12 +198,10 @@ h1 {
 }
 
 /*Подзаголовок третьего уровня "Лоты"*/
-.lots__h3 {
+.lots__heading {
   font-size: 40px;
-  font-family: Raleway, sans-serif;
   color: black;
   text-transform: uppercase;
-  position: absolute;
   margin-left: 40px;
 }
 
@@ -203,17 +210,21 @@ h1 {
   position: relative;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 /*Общие стили для карт*/
 .card {
-  margin-top: 74px;
+  margin-top: 27px;
   position: relative;
   width: 334px;
-  height: 563px;
+  min-height: 563px;
   z-index: 0;
   background-position: center;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /*Добавление фонового изображения для карточек*/
@@ -234,38 +245,28 @@ h1 {
   text-transform: uppercase;
   font-size: 22px;
   font-weight: 300;
-  font-family: Raleway, sans-serif;
   color: white;
   margin-top: 51px;
   margin-left: 40px;
   margin-right: 40px;
   text-decoration: underline;
   z-index: 5;
-  position: absolute;
 }
 
 /*Основной текст в карточках*/
 .card__text {
   font-size: 20px;
-  font-family: Raleway, sans-serif;
   color: white;
-  margin-top: 51px;
   margin-left: 40px;
   margin-right: 40px;
-  z-index: 5;
-  position: absolute;
-  bottom: 0;
   margin-bottom: 48px;
+  z-index: 5;
   display: flex;
   align-items: flex-end;
-  flex-direction: column;
 }
 
 /*Ссылочка "Посмотреть больше"*/
 .lots__look-more-link {
-  position: absolute;
-  height: 22px;
-  font-family: Raleway, sans-serif;
   font-size: 20px;
   margin-top: 30px;
   margin-left: 40px;
@@ -275,14 +276,12 @@ h1 {
 
 /*Секция "Об аукционе"*/
 .about {
-  position: absolute;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-left: 24px;
   margin-right: 24px;
-  height: 595px;
   width: 1052px;
-  margin-top: 1017px;
+  margin-top: 146px;
   z-index: 5;
 }
 /*Черный кружок, фон логотипа*/
@@ -292,7 +291,7 @@ h1 {
   background-color: black;
   border-radius: 50%;
   height: 240px;
-  width: 240px;
+  min-width: 240px;
   margin-left: 47px;
   margin-top: 35px;
   display: flex;
@@ -305,83 +304,56 @@ h1 {
   background-image: url(../images/logo-white.svg);
   height: 114px;
   width: 148px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 /*Секция грида (размер двух карточек из секции "лоты")*/
 .grid__about {
-  grid-column-start: 2;
-  grid-column-end: 4;
+  margin-left: 62px;
 }
 
 /*Заголовок третьего уровня "Об аукционе"*/
 .about__title {
   font-size: 40px;
-  font-family: Raleway, sans-serif;
   color: black;
   text-transform: uppercase;
-  position: absolute;
-  margin-left: 10px;
+  margin-left: 9px;
   margin-top: 136px;
 }
 
-/*Первый абзац текста*/
-.about__text1 {
+/*Общий стиль абзацев*/
+.about__paragraph {
   font-size: 20px;
-  font-family: Raleway, sans-serif;
   color: black;
-  position: absolute;
-  margin-top: 283px;
-  margin-left: 10px;
+  margin-left: 9px;
+  margin-top: 10px;
 }
 
-/*Второй абзац текста*/
-.about__text2 {
-  font-size: 20px;
-  font-family: Raleway, sans-serif;
-  color: black;
-  position: absolute;
-  margin-top: 427px;
-  margin-left: 10px;
+.indent__one__paragraph {
+  margin-top: 100px;
+  margin-right: 5px;
+  width: 688px;
+}
+
+.indent__two__paragraph {
+  margin-top: 24px;
+  width: 693px;
 }
 
 /*Подвал странички*/
 .footer {
   position: relative;
-  height: 98px;
   width: 1000px;
-  margin-top: 1792px;
+  margin-top: 180px;
   margin-left: 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
-
-
-/*//////////////////////*/
-/*Адресный блок*/
-.address_footer {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  position: absolute;
-  font-family: Raleway, sans-serif;
-  font-size: 18px;
-  text-align: left;
-  line-height: 24.3px;
-}
-
-
-
-/*//////////////////////*/
 /*Меню*/
 .footer__menu {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  height: 22px;
-  font-family: Raleway, sans-serif;
-  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
 }
 
 /*Неупорядоченный список меню*/
@@ -389,43 +361,16 @@ h1 {
   list-style: none;
   text-align: center;
 }
-/*//////////////////////*/
 
-
-
-
-/*Блок списка соц сетей*/
 .footer__social-list {
-  display: inline;
-  align-items: center;
-  justify-content: center;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  position: absolute;
-  right: 0;
-  width: 240px;
-  height: 48px;
-}
-
-/*Неупорядоченный список соц сетей*/
-.footer__social-list ul {
   list-style: none;
   display: flex;
   justify-content: space-between;
-}
-
-/*ссылки на социальные сети*/
-.footer__social-link {
-  width: 48px;
-  height: 48px;
-  z-index: 0;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  margin-left: 100px;
+  min-width: 240px;
 }
 
 /*Размер изображения соц сети*/
 .icon-size {
   width: 48px;
-  height: 48px;
 }
