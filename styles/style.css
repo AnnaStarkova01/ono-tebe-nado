@@ -46,7 +46,7 @@ body {
   text-underline-offset: 5px;
 }
 
-.without-underline-active {
+.menu-link_active {
   text-decoration: none;
 }
 
@@ -209,12 +209,12 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 27px;
 }
 
 /*Общие стили для карт*/
 .card-link {
   height: 100%;
+  margin-top: 27px;
 }
 
 .card {
@@ -246,7 +246,7 @@ body {
 .card__title {
   text-transform: uppercase;
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 700;
   color: white;
   margin-top: 51px;
   margin-left: 40px;
@@ -323,23 +323,19 @@ body {
   margin-top: 136px;
 }
 
-/*Общий стиль абзацев*/
+/*Основной текст раздела ""Об аукционе*/
 .about__paragraph {
   font-size: 20px;
   color: black;
   margin-left: 9px;
-  margin-top: 10px;
+  margin-top: 24px;
+  width: 693px;
 }
 
-.margins_top_and_right_paragraph {
+.about__paragraph:first-of-type {
   margin-top: 100px;
   margin-right: 5px;
   width: 688px;
-}
-
-.margin_top_paragraph {
-  margin-top: 24px;
-  width: 693px;
 }
 
 /*Подвал странички*/
